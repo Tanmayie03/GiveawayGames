@@ -1,20 +1,40 @@
+import { useEffect, useState } from "react";
+
+import axios from "axios";
+
 const FirstSection = () => {
+  const [gameGiveaw, setgameGiveaw] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://www.gamerpower.com/api/giveaways"
+      )
+      .then((response) => {
+        console.log(response);
+        setgameGiveaw(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setError(error.message);
+      });
+  }, []);
+
   return (
-    <>
-      <div className="">
-        <img
-          src="../src/assets/images/photoGrid.png"
-          className="w-3/4 mx-auto my-16 "
-        />
-        <div className="px-16">
-          <h1 className="py-6 text-4xl font-bold">Online Experiences</h1>
-          <h1 className="py-2 text-base font-light">
-            Join unique interactive activities led by one-of-a-kind hosts—all
-            without leaving home.
-          </h1>
-        </div>
+    <div>
+      <h2>Data from GamerPower API:</h2>
+
+      <div>
+        {gameGiveaw.map((data) => (
+          <div key={data.id}>
+            {data.title} {data.worth}
+            <img src={`${data.thumbnail}`} />
+            {data.description}
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
