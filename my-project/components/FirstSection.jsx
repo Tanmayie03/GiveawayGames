@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const FirstSection = () => {
-  const [gameGiveaw, setgameGiveaw] = useState([]);
+  const [gameGiveaway, setgameGiveaway] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const FirstSection = () => {
       )
       .then((response) => {
         console.log(response);
-        setgameGiveaw(response.data);
+        setgameGiveaway(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -22,11 +22,9 @@ const FirstSection = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Data from GamerPower API:</h2>
-
-      <div>
-        {gameGiveaw.map((data) => (
+    <div className="flex ">
+      <div className="flex">
+        {gameGiveaway.map((data) => (
           <div key={data.id}>
             {data.title} {data.worth}
             <img src={`${data.thumbnail}`} />
