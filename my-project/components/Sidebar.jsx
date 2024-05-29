@@ -1,6 +1,6 @@
 const Sidebar = () => {
   return (
-    <div className="w-1/5 h-screen p-4 text-white bg-gray-900">
+    <div className="w-1/5 h-screen p-4 text-white bg-gray-900 border-r-2 border-slate-700">
       <img src="https://www.gamerpower.com/assets/images/logo.png" />
 
       <ul className="">

@@ -7,9 +7,9 @@ function App() {
     <>
       <div className="flex justify-between w-full h-screen">
         <Sidebar />
-        <div className="flex flex-col w-4/5 bg-red-400 ">
+        <div className="flex flex-col w-4/5 ">
           <Navbar />
-          <div className="overflow-y-hidden content">
+          <div className="h-full bg-gray-900 content">
             <FirstSection />
           </div>
         </div>

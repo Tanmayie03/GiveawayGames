@@ -1,17 +1,28 @@
-export default function Card() {
+import PropTypes from "prop-types";
+export default function Card(props) {
   return (
-    <div className="card">
-      <img src="../images/katie-zaferes.png" className="card--image" />
-      <div className="card--stats">
-        <img src="../images/star.png" className="card--star" />
-        <span>5.0</span>
-        <span className="gray">(6) • </span>
-        <span className="gray">USA</span>
+    <div className="p-4 m-4 text-white bg-gray-700 rounded-lg shadow-md w-80 card">
+      <div key={props.id}>
+        <img
+          src={props.thumbnail}
+          alt={props.title}
+          className="w-full mb-2 rounded"
+        />
+        <div className="mb-2 text-lg font-semibold line-clamp-2 text-ellipsis">
+          {props.title}
+        </div>
+        <div className="mb-2">{props.worth}</div>
+        <div className="text-gray-300 line-clamp-3 text-ellipsis">
+          {props.description}
+        </div>
       </div>
-      <p>Life Lessons with Katie Zaferes</p>
-      <p>
-        <span>From $136 </span> / person
-      </p>
     </div>
   );
 }
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  worth: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
