@@ -40,7 +40,7 @@ const FirstSection = () => {
 
   return (
     <div className="h-full overflow-y-scroll ">
-      <div className="flex carousel">
+      <div className="flex ">
         <Carousel items={popularGame} />
       </div>
       <div className="flex ">

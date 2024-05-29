@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 export default function Card(props) {
   return (
-    <div className="p-4 m-4 text-white bg-gray-700 rounded-lg shadow-md w-80 card">
+    <div className="p-4 mx-4 text-white bg-gray-700 rounded-lg shadow-md w-80 card">
       <div key={props.id}>
         <img
           src={props.thumbnail}

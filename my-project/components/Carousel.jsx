@@ -14,28 +14,43 @@ export default function Carousel({ items }) {
       autoplay={{ delay: 3000, disableOnInteraction: false }}>
       {items.map((item) => (
         <SwiperSlide key={item.id}>
-          <div className="flex m-4 text-white bg-gray-700 rounded-lg shadow-md bg-opacity-60">
+          <div className="relative flex m-4 text-white bg-gray-700 rounded-lg shadow-md bg-opacity-60">
+            <p className="absolute px-5 py-1 bg-red-500 rounded-full top-2 left-2">
+              Popular
+            </p>
             <img
               src={item.thumbnail}
               alt={item.title}
               className="w-2/3 rounded "
             />
-            <div className="w-1/2 p-4">
-              <div className="text-xl font-bold">{item.title}</div>
-              <div className="flex items-center px-2 text-sm text-green-500 border-2 border-green-500 rounded-full w-fit ">
-                <div className="w-2 h-2 mr-1 bg-green-500 rounded-full"></div>
-                {item.status}
+            <div className="w-1/2 px-8 py-6">
+              <div className="text-xl font-bold line-clamp-1">{item.title}</div>
+              <div className="flex justify-start my-2">
+                <div className="flex items-center px-2 text-sm text-green-500 border-2 border-green-500 rounded-full w-fit ">
+                  <div className="w-2 h-2 mr-1 bg-green-500 rounded-full"></div>
+                  {item.status}
+                </div>
+                <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-slate-400 w-fit">
+                  {item.type}
+                </div>
               </div>
-              <div className="">{item.worth}</div>
-              <div className="">{item.type}</div>
-              <div className="">{item.description}</div>
-              <div className="flex items-center text-gray-300 ">
+              <div className="my-6 line-clamp-3">{item.description}</div>
+              <div className="flex ">
+                <div className="flex items-center px-4 py-1 rounded w-fit bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400">
+                  <span className="line-through text- ">{item.worth}</span>
+                  <p className="pl-2 rounded-sm w-fit">Free</p>
+                </div>
+                <div className="flex items-center px-4 py-1 ml-4 border-2 rounded w-fit border-cyan-400">
+                  <p className="pl-2 rounded-sm w-fit ">Claim now</p>
+                </div>
+              </div>
+              <div className="flex items-center mt-12 text-gray-300 ">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32px"
                     height="26px"
-                    viewBox="0 0 32 28"
+                    viewBox="0 0 32 36"
                     className="w-5 mr-1 ">
                     <path
                       fill="currentColor"
