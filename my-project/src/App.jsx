@@ -9,7 +9,7 @@ function App() {
         <Sidebar />
         <div className="flex flex-col w-4/5 ">
           <Navbar />
-          <div className="h-full bg-gray-900 content">
+          <div className="bg-gray-900 h-[94%] content">
             <FirstSection />
           </div>
         </div>

@@ -10,18 +10,18 @@ const FirstSection = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // axios
-    //   .get(
-    //     "https://cors-anywhere.herokuapp.com/https://www.gamerpower.com/api/giveaways"
-    //   )
-    //   .then((response) => {
-    //     console.log(response);
-    //     setgameGiveaway(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error fetching data:", error);
-    //     setError(error.message);
-    //   });
+    axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://www.gamerpower.com/api/giveaways"
+      )
+      .then((response) => {
+        console.log(response);
+        setgameGiveaway(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setError(error.message);
+      });
   }, []);
   useEffect(() => {
     axios
@@ -39,12 +39,12 @@ const FirstSection = () => {
   }, []);
 
   return (
-    <>
+    <div className="h-full overflow-y-scroll ">
       <div className="flex carousel">
         <Carousel items={popularGame} />
       </div>
       <div className="flex ">
-        <div className="flex">
+        <div className="flex ">
           {gameGiveaway.map((data) => (
             <Card
               key={data.id}
@@ -57,7 +57,7 @@ const FirstSection = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
