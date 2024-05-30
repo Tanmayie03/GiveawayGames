@@ -40,21 +40,45 @@ const FirstSection = () => {
 
   return (
     <div className="h-full overflow-y-scroll ">
-      <div className="flex ">
+      <div className="flex s">
         <Carousel items={popularGame} />
       </div>
-      <div className="flex ">
-        <div className="flex ">
-          {gameGiveaway.map((data) => (
-            <Card
-              key={data.id}
-              id={data.id}
-              title={data.title}
-              worth={data.worth}
-              thumbnail={data.thumbnail}
-              description={data.description}
+      <div className="w-full ">
+        <p className="mx-4 my-2 text-4xl text-white">
+          109 Live Giveaways, Freebies and Offers
+        </p>
+        <div className="flex items-center mx-4 my-2 text-gray-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26px"
+            height="26px"
+            viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"
             />
-          ))}
+          </svg>
+          <p className="ml-2 text-gray-300 ">
+            We found a total of $427.92 worth of games and loot, with a current
+            count of 109 giveaways.
+          </p>
+        </div>
+        <div className="flex mx-4 mt-8 overflow-x-scroll">
+          <div className="flex gap-4 ">
+            {gameGiveaway.map((data) => (
+              <Card
+                key={data.id}
+                id={data.id}
+                title={data.title}
+                worth={data.worth}
+                thumbnail={data.thumbnail}
+                description={data.description}
+                users={data.users}
+                type={data.type}
+                open_giveaway={data.open_giveaway}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

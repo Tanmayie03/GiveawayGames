@@ -15,7 +15,7 @@ export default function Carousel({ items }) {
       {items.map((item) => (
         <SwiperSlide key={item.id}>
           <div className="relative flex m-4 text-white bg-gray-700 rounded-lg shadow-md bg-opacity-60">
-            <p className="absolute px-5 py-1 bg-red-500 rounded-full top-2 left-2">
+            <p className="absolute px-5 py-1 font-semibold bg-red-500 rounded-full top-2 left-2">
               Popular
             </p>
             <img
@@ -41,7 +41,9 @@ export default function Carousel({ items }) {
                   <p className="pl-2 rounded-sm w-fit">Free</p>
                 </div>
                 <div className="flex items-center px-4 py-1 ml-4 border-2 rounded w-fit border-cyan-400">
-                  <p className="pl-2 rounded-sm w-fit ">Claim now</p>
+                  <a href={item.open_giveaway} target="_blank">
+                    <p className="pl-2 rounded-sm w-fit ">Claim now</p>
+                  </a>
                 </div>
               </div>
               <div className="flex items-center mt-12 text-gray-300 ">
@@ -87,7 +89,7 @@ export default function Carousel({ items }) {
                     <path fill="none" d="M0 0h36v36H0z" />
                   </svg>
                 </span>
-                <div className="text-sm">{item.users}+ users</div>
+                <div className="text-sm">{item.users}+ users claimed </div>
               </div>
             </div>
           </div>
