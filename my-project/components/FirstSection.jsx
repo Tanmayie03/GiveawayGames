@@ -39,11 +39,11 @@ const FirstSection = () => {
   }, []);
 
   return (
-    <div className="h-full overflow-y-scroll ">
-      <div className="flex s">
+    <div className="h-[90.5%] overflow-y-scroll  bg-stone-700">
+      <div className="flex">
         <Carousel items={popularGame} />
       </div>
-      <div className="w-full ">
+      <div className="">
         <p className="mx-4 my-2 text-4xl text-white">
           109 Live Giveaways, Freebies and Offers
         </p>

@@ -85,7 +85,7 @@ Card.propTypes = {
   worth: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  users: PropTypes.string.isRequired,
+  users: PropTypes.number.isRequired,
   open_giveaway: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
