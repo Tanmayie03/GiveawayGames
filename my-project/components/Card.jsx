@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 export default function Card(props) {
   return (
-    <div className="p-4 text-white bg-gray-700 border-2 border-gray-800 rounded-md shadow-md h-fit bg-opacity-60 w-80 card">
+    <div className="p-4 text-white border-2 border-gray-800 rounded-md shadow-md bg-stone-800 h-fit bg-opacity-70 w-80 card">
       <div key={props.id}>
         <img
           src={props.thumbnail}
           alt={props.title}
           className="w-full mb-2 rounded"
         />
-        <div className="my-2 text-lg font-semibold line-clamp-2 text-ellipsis">
+        <div className="my-2 text-lg font-semibold line-clamp-1 text-ellipsis">
           {props.title}
         </div>
         <div className="flex items-center justify-between">

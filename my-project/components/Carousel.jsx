@@ -14,8 +14,8 @@ export default function Carousel({ items }) {
       autoplay={{ delay: 3000, disableOnInteraction: false }}>
       {items.map((item) => (
         <SwiperSlide key={item.id}>
-          <div className="relative flex m-4 text-white bg-gray-700 rounded-lg shadow-md bg-opacity-60">
-            <p className="absolute px-5 py-1 font-semibold bg-red-500 rounded-full top-2 left-2">
+          <div className="relative flex m-4 text-white rounded-lg shadow-md bg-stone-800 bg-opacity-60">
+            <p className="absolute px-5 py-[2px] font-semibold bg-white text-red-500 rounded-full top-2 left-2">
               Popular
             </p>
             <img
@@ -89,7 +89,7 @@ export default function Carousel({ items }) {
                     <path fill="none" d="M0 0h36v36H0z" />
                   </svg>
                 </span>
-                <div className="text-sm">{item.users}+ users claimed </div>
+                <div className="text-sm">{item.users}+ Claimed </div>
               </div>
             </div>
           </div>
