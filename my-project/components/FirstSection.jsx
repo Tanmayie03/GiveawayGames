@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "../src/index.css";
 import axios from "axios";
 import Card from "./Card";
 import Carousel from "./Carousel";
@@ -11,9 +11,7 @@ const FirstSection = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://www.gamerpower.com/api/giveaways"
-      )
+      .get("https://mocki.io/v1/b4d2e015-85f9-4513-b134-de6e4498026b")
       .then((response) => {
         console.log(response);
         setgameGiveaway(response.data);
@@ -25,9 +23,7 @@ const FirstSection = () => {
   }, []);
   useEffect(() => {
     axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://www.gamerpower.com/api/giveaways?platform=steam&type=loot&sort-by=popularity"
-      )
+      .get("https://mocki.io/v1/712adbea-e5df-457b-a2eb-54466e364613")
       .then((response) => {
         console.log(response);
         setpopularGame(response.data.slice(0, 5));
@@ -39,12 +35,12 @@ const FirstSection = () => {
   }, []);
 
   return (
-    <div className="h-[90.5%] overflow-y-scroll  bg-stone-700">
+    <div className="h-[90.5%] no-scrollbar p-2 overflow-y-scroll  bg-stone-900">
       <div className="flex">
         <Carousel items={popularGame} />
       </div>
       <div className="">
-        <p className="mx-4 my-2 text-4xl text-white">
+        <p className="mx-4 text-4xl text-white">
           109 Live Giveaways, Freebies and Offers
         </p>
         <div className="flex items-center mx-4 my-2 text-gray-300">
@@ -63,7 +59,7 @@ const FirstSection = () => {
             count of 109 giveaways.
           </p>
         </div>
-        <div className="flex mx-4 mt-8 overflow-x-scroll">
+        <div className="flex mx-4 mt-8 overflow-x-scroll no-scrollbar">
           <div className="flex gap-4 ">
             {gameGiveaway.map((data) => (
               <Card

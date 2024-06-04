@@ -1,28 +1,32 @@
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/swiper-bundle.css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Autoplay, Pagination } from "swiper/modules";
 
 export default function Carousel({ items }) {
   return (
     <Swiper
+      modules={[Autoplay, Pagination]}
       spaceBetween={50}
       slidesPerView={1}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}>
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 4000, disableOnInteraction: true }}>
       {items.map((item) => (
         <SwiperSlide key={item.id}>
           <div className="">
-            <div className="relative flex m-4 text-white rounded-lg shadow-md bg-stone-800 bg-opacity-60">
-              <p className="absolute px-5 py-[2px] font-semibold bg-white text-red-500 rounded-full top-2 left-2">
+            <div className="relative h-[340px] flex m-4 text-white rounded-lg shadow-md bg-stone-800 bg-opacity-80 ">
+              <p className="absolute px-5 py-[2px] font-semibold text-white bg-red-500 rounded-full top-3 left-3">
                 Popular
               </p>
               <img
                 src={item.thumbnail}
                 alt={item.title}
-                className="w-2/3 rounded "
+                className="object-cover w-2/3 rounded "
               />
               <div className="w-1/2 px-8 py-6">
                 <div className="text-xl font-bold line-clamp-1">
@@ -30,7 +34,7 @@ export default function Carousel({ items }) {
                 </div>
                 <div className="flex justify-start my-2">
                   <div className="flex items-center px-2 text-sm text-green-500 border-2 border-green-500 rounded-full w-fit ">
-                    <div className="w-2 h-2 mr-1 bg-green-500 rounded-full"></div>
+                    <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
                     {item.status}
                   </div>
                   <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-slate-400 w-fit">

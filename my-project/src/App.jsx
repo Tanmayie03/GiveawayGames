@@ -4,6 +4,7 @@ import AllGames from "../components/AllGames";
 import Contact from "../components/Contact";
 import FirstSection from "../components/FirstSection";
 import Navbar from "../components/Navbar";
+import "./index.css";
 const Layout = () => (
   <Sidebar>
     <Navbar />
@@ -24,7 +25,7 @@ function App() {
   ]);
 
   return (
-    <div className="w-full h-screen ">
+    <div className="w-full h-screen no-scrollbar bg-stone-900">
       <RouterProvider router={router} />
     </div>
   );
