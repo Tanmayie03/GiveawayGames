@@ -11,15 +11,20 @@ const Sidebar = ({ children }) => {
         <div>
           <nav className="my-4 text-center">
             <ul>
-              <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600">
-                <Link to="/">Home</Link>
-              </div>
-              <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600">
-                <Link to="/allGames">All Games</Link>
-              </div>
-              <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600">
-                <Link to="/contact">Contact</Link>
-              </div>
+              <Link to="/">
+                Home
+                <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600"></div>
+              </Link>
+              <Link to="/allGames">
+                {" "}
+                <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600">
+                  All Games
+                </div>
+              </Link>
+              <Link to="/contact">
+                Contact{" "}
+                <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600"></div>
+              </Link>
             </ul>
           </nav>
         </div>
