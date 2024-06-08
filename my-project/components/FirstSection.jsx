@@ -5,6 +5,7 @@ import Card from "./Card";
 import Carousel from "./Carousel";
 import { Link } from "react-router-dom";
 import AllGames from "./AllGames";
+import Buttons from "./Buttons";
 
 const FirstSection = () => {
   const [gameGiveaway, setgameGiveaway] = useState([]);
@@ -36,12 +37,26 @@ const FirstSection = () => {
       });
   }, []);
 
+  const getUniquePlatforms = (data) => {
+    const platforms = new Set();
+    data.forEach((item) => {
+      if (item.platforms) {
+        item.platforms
+          .split(", ")
+          .forEach((platform) => platforms.add(platform));
+      }
+    });
+    return Array.from(platforms);
+  };
+
+  const platformItems = getUniquePlatforms(gameGiveaway);
+
   return (
     <div className="h-[90.5%]  p-2 overflow-y-scroll  bg-stone-900">
       <div className="flex">
         <Carousel items={popularGame} />
       </div>
-      <div className="">
+      <div className="mt-8 ">
         <p className="mx-4 text-4xl text-white">
           109 Live Giveaways, Freebies and Offers
         </p>
@@ -61,11 +76,12 @@ const FirstSection = () => {
             count of 109 giveaways.
           </p>
         </div>
+        <Buttons platformItems={platformItems} />
         <Link to="./allGames">
-          <p className="flex justify-end mx-6 mt-8 text-white"> See all</p>
+          <p className="flex justify-end mx-6 text-white"> See all</p>
         </Link>
         <div className="flex mx-4 overflow-x-scroll ">
-          <div className="flex gap-4 ">
+          <div className="flex gap-4 h-fit">
             {gameGiveaway.map((data) => (
               <Card
                 key={data.id}
