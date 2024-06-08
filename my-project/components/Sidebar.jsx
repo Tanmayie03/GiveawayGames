@@ -6,7 +6,7 @@ const Sidebar = ({ children }) => {
       <div className="w-1/5 pt-4 text-white border-r bg-stone-900 border-stone-700">
         <img
           src="../public/assets/images/logo.png"
-          className="mx-auto w-44"
+          className="w-40 mx-auto"
           alt="Logo"
         />
         <nav className="w-full my-4">
@@ -16,8 +16,8 @@ const Sidebar = ({ children }) => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-4 border-l-2 w-full border-[#9799ff] rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff] bg-gray-800"
-                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff]"
+                    ? "block py-4 border-l-2 w-full border-cyan-600 rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600 bg-gray-800"
+                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600"
                 }>
                 Home
               </NavLink>
@@ -27,8 +27,8 @@ const Sidebar = ({ children }) => {
                 to="/allGames"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-4 border-l-2 w-full border-[#9799ff] rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff] bg-gray-800"
-                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff]"
+                    ? "block py-4 border-l-2 w-full border-cyan-600 rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600 bg-gray-800"
+                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600"
                 }>
                 All Games
               </NavLink>
@@ -38,8 +38,8 @@ const Sidebar = ({ children }) => {
                 to="/contact"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-4 border-l-2 w-full border-[#9799ff] rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff] bg-gray-800"
-                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff]"
+                    ? "block py-4 border-l-2 w-full border-cyan-600 rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600 bg-gray-800"
+                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600"
                 }>
                 Contact
               </NavLink>

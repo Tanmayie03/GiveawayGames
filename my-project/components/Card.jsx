@@ -25,7 +25,7 @@ export default function Card(props) {
             {props.description}
           </div>
           <div className="flex items-center my-4 ">
-            <div className="flex items-center px-4 py-1 border-2 rounded w-fit hover:bg-gradient-to-tr from-[#9799ff] to-[#2688ff] border-[#9799ff]">
+            <div className="flex items-center px-4 py-1 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400 border-cyan-500">
               <a href={props.open_giveaway} target="_blank">
                 <p className="rounded-sm w-fit">Claim now</p>
               </a>
@@ -36,7 +36,7 @@ export default function Card(props) {
                   xmlns="http://www.w3.org/2000/svg"
                   width="32px"
                   height="25px"
-                  viewBox="0 0 32 36"
+                  viewBox="0 0 32 32"
                   className="w-5 mr-1 ">
                   <path
                     fill="currentColor"
@@ -73,7 +73,7 @@ export default function Card(props) {
                   <path fill="none" d="M0 0h36v36H0z" />
                 </svg>
               </span>
-              <div className="text-sm">{props.users}+ Claimed </div>
+              <div className="text-xs">{props.users}+ Claimed </div>
             </div>
           </div>
         </div>

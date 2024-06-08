@@ -3,6 +3,8 @@ import "../src/index.css";
 import axios from "axios";
 import Card from "./Card";
 import Carousel from "./Carousel";
+import { Link } from "react-router-dom";
+import AllGames from "./AllGames";
 
 const FirstSection = () => {
   const [gameGiveaway, setgameGiveaway] = useState([]);
@@ -35,7 +37,7 @@ const FirstSection = () => {
   }, []);
 
   return (
-    <div className="h-[90.5%] no-scrollbar p-2 overflow-y-scroll  bg-stone-900">
+    <div className="h-[90.5%]  p-2 overflow-y-scroll  bg-stone-900">
       <div className="flex">
         <Carousel items={popularGame} />
       </div>
@@ -59,7 +61,10 @@ const FirstSection = () => {
             count of 109 giveaways.
           </p>
         </div>
-        <div className="flex mx-4 mt-8 overflow-x-scroll no-scrollbar">
+        <Link to="./allGames">
+          <p className="flex justify-end mx-6 mt-8 text-white"> See all</p>
+        </Link>
+        <div className="flex mx-4 overflow-x-scroll ">
           <div className="flex gap-4 ">
             {gameGiveaway.map((data) => (
               <Card

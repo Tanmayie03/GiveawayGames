@@ -2,17 +2,6 @@
   width: 10px;
 }
 
-@layer utilities {
-  .paused {
-    animation-play-state: paused;
-  }
-  @vartients responsive {
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-      width: 0px;
-    }
-  }
-}
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -23,6 +12,21 @@
   background: skyblue;
   border-radius: 5px;
 }
+
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
+  @variants responsive {
+    .no-scrollbar {
+      ::-webkit-scrollbar {
+        display: none;
+        width: 0px;
+      }
+    }
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

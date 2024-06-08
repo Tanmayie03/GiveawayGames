@@ -24,7 +24,7 @@ const AllGames = () => {
         We found a total of $427.92 worth of games and loot, with a current
         count of 109 giveaways.
       </p>
-      <div className="grid w-full  h-[90.2%] grid-cols-3 justify-center gap-6 m-6 overflow-y-scroll">
+      <div className="grid  mx-6  h-[90.2%] grid-cols-3  gap-6 overflow-y-scroll">
         {gameGiveaway.map((data) => (
           <Card
             key={data.id}
