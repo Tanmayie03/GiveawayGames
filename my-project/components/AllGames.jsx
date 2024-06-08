@@ -20,7 +20,11 @@ const AllGames = () => {
   }, []);
   return (
     <div className=" h-[90.2%] overflow-hidden">
-      <div className="grid  h-[90.2%] grid-cols-3 gap-6 m-6 overflow-y-scroll">
+      <p className="ml-2 text-gray-300 ">
+        We found a total of $427.92 worth of games and loot, with a current
+        count of 109 giveaways.
+      </p>
+      <div className="grid w-full  h-[90.2%] grid-cols-3 justify-center gap-6 m-6 overflow-y-scroll">
         {gameGiveaway.map((data) => (
           <Card
             key={data.id}

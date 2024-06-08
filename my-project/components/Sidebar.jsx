@@ -1,36 +1,53 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ children }) => {
   return (
-    <div className="flex h-screen ">
-      <div className="w-1/4 pt-4 text-white border-r bg-stone-900 border-stone-700">
+    <div className="flex h-screen">
+      <div className="w-1/5 pt-4 text-white border-r bg-stone-900 border-stone-700">
         <img
-          src="https://www.gamerpower.com/assets/images/logo.png"
+          src="../public/assets/images/logo.png"
           className="mx-auto w-44"
+          alt="Logo"
         />
-        <div>
-          <nav className="my-4 text-center">
-            <ul>
-              <Link to="/">
+        <nav className="w-full my-4">
+          <ul className="w-full">
+            <li className="w-full text-center">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block py-4 border-l-2 w-full border-[#9799ff] rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff] bg-gray-800"
+                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff]"
+                }>
                 Home
-                <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600"></div>
-              </Link>
-              <Link to="/allGames">
-                {" "}
-                <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600">
-                  All Games
-                </div>
-              </Link>
-              <Link to="/contact">
-                Contact{" "}
-                <div className="py-4 border-l-2 border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-cyan-600"></div>
-              </Link>
-            </ul>
-          </nav>
-        </div>
+              </NavLink>
+            </li>
+            <li className="w-full text-center">
+              <NavLink
+                to="/allGames"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block py-4 border-l-2 w-full border-[#9799ff] rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff] bg-gray-800"
+                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff]"
+                }>
+                All Games
+              </NavLink>
+            </li>
+            <li className="w-full text-center">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? "block py-4 border-l-2 w-full border-[#9799ff] rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff] bg-gray-800"
+                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-gray-800 bg-opacity-60 hover:border-[#9799ff]"
+                }>
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
       </div>
-
-      <div className="w-[84%]">{children}</div>
+      <div className="w-4/5">{children}</div>
     </div>
   );
 };
