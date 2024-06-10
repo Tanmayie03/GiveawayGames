@@ -1,7 +1,6 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import AllGames from "../components/AllGames";
-import Contact from "../components/Contact";
 import FirstSection from "../components/FirstSection";
 import Navbar from "../components/Navbar";
 import "./index.css";
@@ -20,7 +19,6 @@ function App() {
       children: [
         { path: "/", element: <FirstSection /> },
         { path: "/allGames", element: <AllGames /> },
-        { path: "/contact", element: <Contact /> },
         { path: "/cardId/:id", element: <CardId /> },
       ],
     },

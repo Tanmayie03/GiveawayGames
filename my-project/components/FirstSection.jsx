@@ -17,7 +17,7 @@ const FirstSection = () => {
 
   useEffect(() => {
     axios
-      .get("https://mocki.io/v1/b4d2e015-85f9-4513-b134-de6e4498026b")
+      .get("https://mocki.io/v1/ff15cb4d-af02-4091-9496-ddd576a21f29")
       .then((response) => {
         console.log(response);
         setgameGiveaway(response.data);
@@ -28,6 +28,30 @@ const FirstSection = () => {
         console.error("Error fetching data:", error);
         setError(error.message);
       });
+
+    const fetchData = async () => {
+      const options = {
+        method: "GET",
+        url: "https://gamerpower.p.rapidapi.com/api/filter",
+        params: {
+          platform: "epic-games-store.steam.android",
+          type: "game.loot",
+        },
+        headers: {
+          "x-rapidapi-key":
+            "43510225a5msh602504b2e2deac1p126d7djsn02c614603526",
+          "x-rapidapi-host": "gamerpower.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
   }, []);
   useEffect(() => {
     axios
@@ -69,7 +93,7 @@ const FirstSection = () => {
         <Carousel items={popularGame} />
       </div>
       <div className="mt-4 ">
-        <p className="mx-4 text-4xl text-stone-300">
+        <p className="mx-4 md:text-4xl text-stone-300">
           109 Live Giveaways, Freebies and Offers
         </p>
         <div className="flex items-center mx-4 my-2 text-stone-500">
@@ -83,7 +107,7 @@ const FirstSection = () => {
               d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"
             />
           </svg>
-          <p className="ml-2 text-stone-500 ">
+          <p className="ml-2 text-sm md:text-base text-stone-500 ">
             We found a total of $427.92 worth of games and loot, with a current
             count of 109 giveaways.
           </p>
@@ -97,7 +121,7 @@ const FirstSection = () => {
           <p className="flex justify-end mx-6 text-white"> See all</p>
         </Link>
         <div className="flex mx-4 overflow-x-scroll ">
-          <div className="flex gap-4 h-fit">
+          <div className="flex flex-wrap gap-4 md:flex-nowrap h-fit">
             {filteredItems.map((data) => (
               <Card
                 key={data.id}
