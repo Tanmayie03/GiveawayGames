@@ -1,8 +1,15 @@
-const Buttons = ({ platformItems }) => {
+const Buttons = ({ platformItems, filterItems, activePlatform }) => {
   return (
-    <div className="flex justify-around py-2 mx-4 text-sm text-white bg-stone-800 bg-opacity-60">
+    <div className="flex justify-between m-4 bg-stone-800">
       {platformItems.map((platform, index) => (
-        <button key={index} className="px-4 py-2">
+        <button
+          key={index}
+          className={`px-2 text-sm py-2 ${
+            activePlatform === platform
+              ? "text-white bg-stone-900 border-b border-cyan-400"
+              : "text-white bg-transparent"
+          }`}
+          onClick={() => filterItems(platform)}>
           {platform}
         </button>
       ))}

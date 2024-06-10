@@ -11,6 +11,9 @@ const FirstSection = () => {
   const [gameGiveaway, setgameGiveaway] = useState([]);
   const [popularGame, setpopularGame] = useState([]);
   const [error, setError] = useState(null);
+  const [platformItems, setPlatformItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [activePlatform, setActivePlatform] = useState([]);
 
   useEffect(() => {
     axios
@@ -18,6 +21,8 @@ const FirstSection = () => {
       .then((response) => {
         console.log(response);
         setgameGiveaway(response.data);
+        setFilteredItems(response.data);
+        setPlatformItems(getUniquePlatforms(response.data));
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -46,21 +51,28 @@ const FirstSection = () => {
           .forEach((platform) => platforms.add(platform));
       }
     });
+    console.log(platforms);
     return Array.from(platforms);
   };
 
-  const platformItems = getUniquePlatforms(gameGiveaway);
+  const filterItems = (cat) => {
+    setActivePlatform(cat);
+    const newItems = gameGiveaway.filter((item) =>
+      item.platforms.includes(cat)
+    );
+    setFilteredItems(newItems);
+  };
 
   return (
     <div className="h-[90.5%]  p-2 overflow-y-scroll  bg-stone-900">
       <div className="flex">
         <Carousel items={popularGame} />
       </div>
-      <div className="mt-8 ">
-        <p className="mx-4 text-4xl text-white">
+      <div className="mt-4 ">
+        <p className="mx-4 text-4xl text-stone-300">
           109 Live Giveaways, Freebies and Offers
         </p>
-        <div className="flex items-center mx-4 my-2 text-gray-300">
+        <div className="flex items-center mx-4 my-2 text-stone-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26px"
@@ -71,18 +83,22 @@ const FirstSection = () => {
               d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"
             />
           </svg>
-          <p className="ml-2 text-gray-300 ">
+          <p className="ml-2 text-stone-500 ">
             We found a total of $427.92 worth of games and loot, with a current
             count of 109 giveaways.
           </p>
         </div>
-        <Buttons platformItems={platformItems} />
+        <Buttons
+          platformItems={[...platformItems]}
+          filterItems={filterItems}
+          activePlatform={activePlatform}
+        />
         <Link to="./allGames">
           <p className="flex justify-end mx-6 text-white"> See all</p>
         </Link>
         <div className="flex mx-4 overflow-x-scroll ">
           <div className="flex gap-4 h-fit">
-            {gameGiveaway.map((data) => (
+            {filteredItems.map((data) => (
               <Card
                 key={data.id}
                 id={data.id}
