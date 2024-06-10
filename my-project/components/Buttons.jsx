@@ -1,6 +1,6 @@
 const Buttons = ({ platformItems, filterItems, activePlatform }) => {
   return (
-    <div className="flex justify-between m-4 bg-stone-800">
+    <div className="flex justify-between m-4 rounded bg-stone-800">
       {platformItems.map((platform, index) => (
         <button
           key={index}
