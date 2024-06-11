@@ -19,7 +19,7 @@ function App() {
       children: [
         { path: "/", element: <FirstSection /> },
         { path: "/allGames", element: <AllGames /> },
-        { path: "/cardId/:id", element: <CardId /> },
+        { path: "/CardId/:id", element: <CardId /> },
       ],
     },
   ]);

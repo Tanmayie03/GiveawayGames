@@ -12,21 +12,18 @@ const CardId = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://gamerpower.p.rapidapi.com/api/filter/${id}`,
-          {
-            params: {
-              platform: "epic-games-store.steam.android",
-              type: "game.loot",
-            },
-            headers: {
-              "x-rapidapi-key":
-                "43510225a5msh602504b2e2deac1p126d7djsn02c614603526",
-              "x-rapidapi-host": "gamerpower.p.rapidapi.com",
-            },
-          }
+          `https://mocki.io/v1/ff15cb4d-af02-4091-9496-ddd576a21f29`
         );
-        setCardData(response.data);
+
+        const item = response.data.find((item) => item.id === parseInt(id));
+
+        if (item) {
+          setCardData(item);
+        } else {
+          setError("No data found for the given ID");
+        }
       } catch (error) {
+        console.error("Error fetching data:", error.message);
         setError(error.message);
       } finally {
         setLoading(false);
@@ -42,22 +39,28 @@ const CardId = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-  console.log(cardData);
+
+  if (!cardData) {
+    return <div>No data available</div>;
+  }
+
   return (
-    <div>
-      <div className="p-4 text-white bg-stone-900">
-        <h1 className="text-4xl">{cardData.title}</h1>
-        <img
-          src={cardData.thumbnail}
-          alt={cardData.title}
-          className="w-full h-auto"
-        />
-        <p>{cardData.description}</p>
-        <p>Worth: {cardData.worth}</p>
-        <p>Type: {cardData.type}</p>
-        <p>Users: {cardData.users}</p>
-        <p>Open Giveaway: {cardData.open_giveaway}</p>
-      </div>
+    <div className="p-4 text-white bg-stone-900">
+      <h1 className="text-4xl">{cardData.title}</h1>
+      <img src={cardData.thumbnail} alt={cardData.title} className="" />
+      <p>{cardData.description}</p>
+      <p>Worth: {cardData.worth}</p>
+      <p>Type: {cardData.type}</p>
+      <p>Users: {cardData.users}</p>
+      <p>
+        Open Giveaway:{" "}
+        <a
+          href={cardData.open_giveaway}
+          target="_blank"
+          rel="noopener noreferrer">
+          Claim now
+        </a>
+      </p>
     </div>
   );
 };
