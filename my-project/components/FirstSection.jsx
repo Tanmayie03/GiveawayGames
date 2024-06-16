@@ -93,7 +93,7 @@ const FirstSection = () => {
         <Carousel items={popularGame} />
       </div>
       <div className="mt-4 ">
-        <p className="mx-4 md:text-4xl text-stone-300">
+        <p className="mx-4 text-xl md:text-4xl text-stone-300">
           109 Live Giveaways, Freebies and Offers
         </p>
         <div className="flex items-center mx-4 my-2 text-stone-500">
