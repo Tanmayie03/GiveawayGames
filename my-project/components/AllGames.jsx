@@ -21,7 +21,7 @@ const AllGames = () => {
   return (
     <div className=" h-[90.2%] overflow-hidden">
       <div className="mt-4 ">
-        <p className="mx-4 text-4xl text-stone-300">
+        <p className="mx-6 text-4xl md:mx-4 text-stone-300">
           109 Live Giveaways, Freebies and Offers
         </p>
         <div className="flex items-center mx-4 my-2 text-stone-500">
@@ -41,7 +41,7 @@ const AllGames = () => {
           </p>
         </div>
       </div>
-      <div className="grid  mx-6  my-4 h-[90.2%] grid-cols-3  gap-6 overflow-y-scroll">
+      <div className="grid  mx-6  my-4 h-[90.2%] grid-cols-1 md:grid-cols-3  gap-6 overflow-y-scroll">
         {gameGiveaway.map((data) => (
           <Card
             key={data.id}

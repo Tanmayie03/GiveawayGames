@@ -45,7 +45,7 @@ const CardId = () => {
   }
 
   return (
-    <div className="p-4 text-white bg-stone-900">
+    <div className="p-6 text-white bg-stone-900">
       <h1 className="text-4xl">{cardData.title}</h1>
       <img src={cardData.thumbnail} alt={cardData.title} className="" />
       <p>{cardData.description}</p>

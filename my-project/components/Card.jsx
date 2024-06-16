@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Card(props) {
   return (
     <Link to={`/CardId/${props.id}`}>
-      <div className="text-white border-2 rounded-md shadow-md w-80 hover:bg-stone-950 border-stone-900 bg-stone-800 h-fit bg-opacity-70 card">
+      <div className="text-white border-2 rounded-md shadow-md md:w-80 hover:bg-stone-950 border-stone-900 bg-stone-800 h-fit bg-opacity-70 card">
         <div key={props.id}>
           <img
             src={props.thumbnail}

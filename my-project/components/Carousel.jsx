@@ -20,16 +20,16 @@ export default function Carousel({ items }) {
         {items.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="">
-              <div className="relative h-[340px] flex m-4 text-white rounded-lg shadow-md bg-stone-800 bg-opacity-80 ">
+              <div className="relative md:h-[340px] flex md:flex-row flex-col m-4 text-white rounded-lg shadow-md bg-stone-800 bg-opacity-80 ">
                 <p className="absolute px-5 py-[2px] font-semibold text-white bg-red-500 rounded-full top-3 left-3">
                   Popular
                 </p>
                 <img
                   src={item.thumbnail}
                   alt={item.title}
-                  className="object-cover w-2/3 rounded "
+                  className="object-cover rounded h-52 md:h-full md:w-2/3 "
                 />
-                <div className="w-1/2 px-8 py-6">
+                <div className="px-8 py-6 md:w-1/2">
                   <div className="text-xl font-bold line-clamp-1">
                     {item.title}
                   </div>

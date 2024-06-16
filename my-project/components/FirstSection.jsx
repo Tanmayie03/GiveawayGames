@@ -120,7 +120,7 @@ const FirstSection = () => {
         <Link to="./allGames">
           <p className="flex justify-end mx-6 text-white"> See all</p>
         </Link>
-        <div className="flex mx-4 overflow-x-scroll ">
+        <div className="flex justify-center mx-4 overflow-x-scroll ">
           <div className="flex flex-wrap gap-4 md:flex-nowrap h-fit">
             {filteredItems.map((data) => (
               <Card
