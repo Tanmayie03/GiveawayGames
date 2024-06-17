@@ -1,6 +1,6 @@
 const Buttons = ({ platformItems, filterItems, activePlatform }) => {
   return (
-    <div className="flex justify-between m-4 overflow-x-scroll  rounded w-[310px] sm:w-[360px] md:w-fit md:block bg-stone-800">
+    <div className="flex justify-between m-4 overflow-x-scroll  rounded w-[325px] sm:w-[360px] md:w-fit md:block bg-stone-800">
       {platformItems.map((platform, index) => (
         <button
           key={index}

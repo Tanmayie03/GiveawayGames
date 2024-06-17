@@ -44,23 +44,23 @@ const CardId = () => {
     return <div>No data available</div>;
   }
   const instructionsArray = cardData.instructions.split("\r\n");
-  const platformWord = cardData.platforms.split(",");
+  const platformWord = cardData.platforms.split(",").slice(0, 2);
   console.log(platformWord);
   return (
-    <div className="h-[90.5%]  p-6 overflow-y-scroll  bg-stone-900">
-      <div className="flex flex-col items-center p-6 text-white bg-stone-800 md:items-start ">
+    <div className="h-[90.5%] p-4  md:p-6 overflow-y-scroll  bg-stone-900">
+      <div className="flex flex-col items-center p-4 text-white md:p-6 bg-stone-800 md:items-start ">
         <div className="relative flex flex-col w-full md:flex-row ">
           <img
             src={cardData.image}
             alt={cardData.title}
-            className="my-4 md:w-1/2 md:my-0 hover:opacity-90 "
+            className="h-full mb-4 md:w-1/2 hover:opacity-90 "
           />
           <div className="absolute flex items-center px-2 text-sm text-green-500 border-2 border-green-500 rounded-full left-2 top-2 w-fit ">
             <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
             {cardData.status}
           </div>
           <div className="flex flex-col md:px-6 md:w-1/2">
-            <h1 className="text-3xl font-semibold md:text-3xl">
+            <h1 className="text-2xl font-semibold md:text-3xl">
               {cardData.title}
             </h1>
             <p className="py-2 text-sm">
