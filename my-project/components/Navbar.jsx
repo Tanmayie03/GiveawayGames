@@ -7,7 +7,7 @@ export default function Navbar() {
     <div className="relative bg-black">
       <div className="flex items-center justify-between h-16 p-2 px-4 text-white bg-opacity-80 bg-stone-800">
         <p className="mx-2 text-xl ">
-          Welcome <span className="italic">Tanmayie</span>!
+          Welcome <span className="italic">User</span>!
         </p>
         <div className="md:hidden" onClick={() => setShowModal(true)}>
           <svg
