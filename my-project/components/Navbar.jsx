@@ -4,9 +4,14 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="relative bg-black">
-      <div className="flex items-center justify-between h-16 p-2 px-4 text-white bg-opacity-80 bg-stone-800">
-        <p className="mx-2 text-xl ">
+    <div className="relative bg-[#1e1e2f]">
+      <div className="flex items-center justify-between h-16 p-2 px-4 text-white bg-opacity bg-[#191919]">
+        <img
+          src="https://res.cloudinary.com/dy7zpv1ij/image/upload/v1718633152/logo_muowun.png"
+          className="w-28 md:hidden"
+          alt="Logo"
+        />
+        <p className="hidden mx-2 text-xl md:block font-montserrat ">
           Welcome <span className="italic">User</span>!
         </p>
         <div className="md:hidden" onClick={() => setShowModal(true)}>

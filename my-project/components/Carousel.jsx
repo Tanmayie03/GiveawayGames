@@ -20,8 +20,8 @@ export default function Carousel({ items }) {
         {items.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="">
-              <div className="relative md:h-[340px] flex md:flex-row flex-col m-4 text-white rounded-lg shadow-md bg-stone-800 bg-opacity-80 ">
-                <p className="absolute px-5 py-[2px] font-semibold text-white bg-red-500 rounded-full sm:top-3 left-2 top-2 sm:left-3">
+              <div className="relative md:h-[340px] flex md:flex-row flex-col m-4 text-white rounded-lg shadow-md bg-[#191919] b ">
+                <p className="absolute md:px-5 px-4 py-[2px]  text-sm md:text-base  md:font-semibold text-white bg-red-500 rounded-full sm:top-3 left-2 top-2 sm:left-3">
                   Popular
                 </p>
                 <img
@@ -38,15 +38,15 @@ export default function Carousel({ items }) {
                       <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
                       {item.status}
                     </div>
-                    <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-slate-400 w-fit">
+                    <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-[#5b5b5b] w-fit">
                       {item.type}
                     </div>
                   </div>
                   <div className="my-6 line-clamp-3">{item.description}</div>
                   <div className="flex ">
-                    <div className="flex items-center px-4 py-1 rounded w-fit bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400">
+                    <div className="flex items-center px-4 py-1 rounded w-fit bg-gradient-to-tr from-green-500 via-cyan-500 to-blue-500">
                       <span className="line-through text- ">{item.worth}</span>
-                      <p className="pl-2 rounded-sm w-fit">Free</p>
+                      <p className="pl-2 font-medium rounded-sm w-fit">Free</p>
                     </div>
                     <div className="flex items-center px-4 py-1 ml-4 border-2 rounded w-fit border-cyan-400">
                       <a href={item.open_giveaway} target="_blank">
@@ -54,7 +54,7 @@ export default function Carousel({ items }) {
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center mt-12 text-gray-300 ">
+                  <div className="flex items-center mt-4 text-gray-300 md:mt-12 ">
                     <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

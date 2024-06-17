@@ -19,7 +19,7 @@ const AllGames = () => {
       });
   }, []);
   return (
-    <div className=" h-[90.2%] overflow-hidden">
+    <div className=" h-[90.2%] bg-[#121212] overflow-hidden">
       <div className="mt-4 ">
         <p className="mx-6 text-2xl md:text-4xl md:mx-4 text-stone-300">
           109 Live Giveaways, Freebies and Offers

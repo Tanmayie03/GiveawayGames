@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Card(props) {
   return (
     <Link to={`/CardId/${props.id}`}>
-      <div className="text-white border-2 rounded-md shadow-md md:w-80 hover:bg-stone-950 border-stone-900 bg-stone-800 h-fit bg-opacity-70 card">
+      <div className="text-white border-2 rounded-md shadow-md md:w-80 hover:bg-[#282828] border-stone-900 bg-[#191919] h-fit bg-opacity-70 card">
         <div key={props.id}>
           <img
             src={props.thumbnail}
@@ -21,7 +21,7 @@ export default function Card(props) {
                 </span>
                 <p className="pl-2 text-green-400 rounded-sm w-fit">Free</p>
               </div>
-              <div className="px-4 py-[2px] mx-3 text-[15px] text-center rounded-full bg-gray-400 w-fit">
+              <div className="px-4 py-[2px] mx-3 text-sm text-center rounded-full bg-[#3f3f3f] w-fit">
                 {props.type}
               </div>
             </div>
@@ -29,7 +29,7 @@ export default function Card(props) {
               {props.description}
             </div>
             <div className="flex items-center my-4 ">
-              <div className="flex items-center px-4 py-1 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400 border-cyan-500">
+              <div className="flex items-center px-4 py-1 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-500 via-cyan-500 to-blue-500 border-cyan-500">
                 <a href={props.open_giveaway} target="_blank">
                   <p className="rounded-sm w-fit">Claim now</p>
                 </a>

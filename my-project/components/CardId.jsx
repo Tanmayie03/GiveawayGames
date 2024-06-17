@@ -47,41 +47,43 @@ const CardId = () => {
   const platformWord = cardData.platforms.split(",").slice(0, 2);
   console.log(platformWord);
   return (
-    <div className="h-[90.5%] p-4  md:p-6 overflow-y-scroll  bg-stone-900">
-      <div className="flex flex-col items-center p-4 text-white md:p-6 bg-stone-800 md:items-start ">
-        <div className="relative flex flex-col w-full md:flex-row ">
-          <img
-            src={cardData.image}
-            alt={cardData.title}
-            className="h-full mb-4 md:w-1/2 hover:opacity-90 "
-          />
+    <div className="h-[90.5%]  font-lato  md:p-6 overflow-y-scroll  bg-[#121212]">
+      <div className="flex flex-col items-center p-4 text-white md:p-0 md:items-start ">
+        <div className="relative flex flex-col w-full rounded  md:flex-row bg-[#191919]">
+          <div className=" md:w-1/2">
+            <img
+              src={cardData.image}
+              alt={cardData.title}
+              className="object-cover h-full mb-4 md:mb-0 hover:opacity-90 "
+            />
+          </div>
           <div className="absolute flex items-center px-2 text-sm text-green-500 border-2 border-green-500 rounded-full left-2 top-2 w-fit ">
             <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
             {cardData.status}
           </div>
-          <div className="flex flex-col md:px-6 md:w-1/2">
-            <h1 className="text-2xl font-semibold md:text-3xl">
+          <div className="flex flex-col p-4 md:p-0 md:py-4 md:px-6 md:w-1/2">
+            <h1 className="text-2xl font-semibold md:text-2xl">
               {cardData.title}
             </h1>
             <p className="py-2 text-sm">
               {" "}
-              <span className="mr-1 text-stone-400"> Published on:</span>{" "}
+              <span className="mr-1 text-[#717171]"> Published on:</span>{" "}
               {cardData.published_date.slice(0, 10)}
             </p>
 
-            <div className="flex my-1 text-sm text-stone-400">
+            <div className="flex my-1 text-sm text-[#717171]">
               Type:
-              <p className="px-4 py-[2px] mx-2 text-white text-sm rounded-full bg-stone-500 w-fit">
+              <p className="px-4 py-[2px] mx-2 text-white text-sm rounded-full bg-[#282828] w-fit">
                 {" "}
                 {cardData.type}
               </p>
             </div>
-            <p className="py-1 text-sm text-stone-400">
+            <p className="py-1 text-sm text-[#717171]">
               For Platform:{" "}
               {platformWord.map((platform, index) => (
                 <span
                   key={index}
-                  className="px-3 py-[2px] text-sm font-semibold text-black rounded-full bg-cyan-400 mx-1">
+                  className="px-3 py-[2px] text-sm f text-[#5b5b5b] rounded-full bg-cyan-400 mx-1">
                   {platform}
                 </span>
               ))}
@@ -97,7 +99,7 @@ const CardId = () => {
                 </a>
               </div>
             </div>
-            <p className="flex pt-2 text-stone-400">
+            <p className="flex pt-2 text-[#717171]">
               <span className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -144,32 +146,35 @@ const CardId = () => {
             </p>
           </div>
         </div>
-        <p className="py-4">
-          {" "}
-          <span className="text-lg font-semibold text-stone-400">
-            About this game:
-          </span>{" "}
-          <br></br> {cardData.description}
-        </p>
-        <div className="flex flex-col">
-          <span className="text-lg font-semibold text-stone-400">
-            Instructions:
-          </span>
-          <ul className="list-disc list-inside">
-            {instructionsArray.map((instruction, index) => (
-              <li
-                className="list-none"
-                key={index}
-                dangerouslySetInnerHTML={{ __html: instruction }}
-              />
-            ))}
-          </ul>
-        </div>
-        <div className="flex col"></div>
-        <div className="flex items-center px-4 py-1 my-4 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400 border-cyan-500">
-          <a href={cardData.open_giveaway} target="_blank">
-            <p className="rounded-sm w-fit">Claim now</p>
-          </a>
+        <div className="h-[2px] bg-  my-1"></div>
+        <div className=" bg-[#191919] my- px-6 w-full">
+          <p className="py-4">
+            {" "}
+            <span className="text-lg font-semibold text-[#717171]">
+              About this game:
+            </span>{" "}
+            <br></br> {cardData.description}
+          </p>
+          <div className="flex flex-col">
+            <span className="text-lg font-semibold text-[#717171]">
+              Instructions:
+            </span>
+            <ul className="list-disc list-inside">
+              {instructionsArray.map((instruction, index) => (
+                <li
+                  className="list-none"
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: instruction }}
+                />
+              ))}
+            </ul>
+          </div>
+          <div className="flex col"></div>
+          <div className="flex items-center px-4 py-1 my-4 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400 border-cyan-500">
+            <a href={cardData.open_giveaway} target="_blank">
+              <p className="rounded-sm w-fit">Claim now</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
