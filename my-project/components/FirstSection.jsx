@@ -19,13 +19,11 @@ const FirstSection = () => {
     axios
       .get("https://mocki.io/v1/ff15cb4d-af02-4091-9496-ddd576a21f29")
       .then((response) => {
-        console.log(response);
         setgameGiveaway(response.data);
         setFilteredItems(response.data);
         setPlatformItems(getUniquePlatforms(response.data));
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
         setError(error.message);
       });
 
@@ -57,11 +55,9 @@ const FirstSection = () => {
     axios
       .get("https://mocki.io/v1/712adbea-e5df-457b-a2eb-54466e364613")
       .then((response) => {
-        console.log(response);
         setpopularGame(response.data.slice(0, 5));
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
         setError(error.message);
       });
   }, []);
@@ -75,7 +71,6 @@ const FirstSection = () => {
           .forEach((platform) => platforms.add(platform));
       }
     });
-    console.log(platforms);
     return Array.from(platforms);
   };
 

@@ -29,7 +29,7 @@ export default function Carousel({ items }) {
                   alt={item.title}
                   className="object-cover rounded h-52 md:h-full md:w-2/3 "
                 />
-                <div className="px-8 py-6 md:w-1/2">
+                <div className="px-4 py-6 sm:px-8 md:w-1/2">
                   <div className="text-xl font-bold line-clamp-1">
                     {item.title}
                   </div>

@@ -49,17 +49,17 @@ const CardId = () => {
   return (
     <div className="h-[90.5%]  p-6 overflow-y-scroll  bg-stone-900">
       <div className="flex flex-col items-center p-6 text-white bg-stone-800 md:items-start ">
-        <div className="relative flex w-full ">
+        <div className="relative flex flex-col w-full md:flex-row ">
           <img
             src={cardData.image}
             alt={cardData.title}
-            className="w-1/2 my-4 md:my-0 hover:opacity-90 "
+            className="my-4 md:w-1/2 md:my-0 hover:opacity-90 "
           />
           <div className="absolute flex items-center px-2 text-sm text-green-500 border-2 border-green-500 rounded-full left-2 top-2 w-fit ">
             <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
             {cardData.status}
           </div>
-          <div className="flex flex-col w-1/2 px-6">
+          <div className="flex flex-col md:px-6 md:w-1/2">
             <h1 className="text-3xl font-semibold md:text-3xl">
               {cardData.title}
             </h1>
