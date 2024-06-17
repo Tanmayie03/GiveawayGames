@@ -5,7 +5,7 @@ const Sidebar = ({ children }) => {
     <div className="flex w-full h-screen">
       <div className="hidden w-1/5 pt-4 text-white border-r md:block bg-stone-900 border-stone-700">
         <img
-          src="../public/assets/images/logo.png"
+          src="https://res.cloudinary.com/dy7zpv1ij/image/upload/v1718633152/logo_muowun.png"
           className="w-40 mx-auto"
           alt="Logo"
         />
