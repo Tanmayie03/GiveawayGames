@@ -9,7 +9,7 @@ export default function Navbar() {
         <p className="mx-2 text-xl ">
           Welcome <span className="italic">Tanmayie</span>!
         </p>
-        <div className="" onClick={() => setShowModal(true)}>
+        <div className="md:hidden" onClick={() => setShowModal(true)}>
           <svg
             width="24"
             height="24"
