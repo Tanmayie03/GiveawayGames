@@ -43,24 +43,45 @@ const CardId = () => {
   if (!cardData) {
     return <div>No data available</div>;
   }
-
+  const instructionsArray = cardData.instructions.split("\r\n");
   return (
-    <div className="p-6 text-white bg-stone-900">
-      <h1 className="text-4xl">{cardData.title}</h1>
-      <img src={cardData.thumbnail} alt={cardData.title} className="" />
-      <p>{cardData.description}</p>
-      <p>Worth: {cardData.worth}</p>
-      <p>Type: {cardData.type}</p>
-      <p>Users: {cardData.users}</p>
-      <p>
-        Open Giveaway:{" "}
-        <a
-          href={cardData.open_giveaway}
-          target="_blank"
-          rel="noopener noreferrer">
-          Claim now
-        </a>
-      </p>
+    <div className="h-[90.5%]  p-2 overflow-y-scroll  bg-stone-900">
+      <div className="flex flex-col items-center p-6 text-white md:items-start ">
+        <h1 className="text-3xl font-semibold md:text-4xl">{cardData.title}</h1>
+        <div className="flex ">
+          <img
+            src={cardData.image}
+            alt={cardData.title}
+            className="w-full my-4 md:my-0"
+          />
+          <p>{cardData.description}</p>
+        </div>
+        <ul className="list-disc list-inside">
+          {instructionsArray.map((instruction, index) => (
+            <li
+              className="list-none"
+              key={index}
+              dangerouslySetInnerHTML={{ __html: instruction }}
+            />
+          ))}
+        </ul>
+        <div className="flex col">
+          <p>Worth: {cardData.worth}</p>
+          <p>Type: {cardData.type}</p>
+          <p>Users: {cardData.users}</p>
+          <p> {cardData.published_date.slice(0, 10)}</p>
+          <p> {cardData.end_date.slice(0, 10)}</p>
+          <p>
+            Open Giveaway:{" "}
+            <a
+              href={cardData.open_giveaway}
+              target="_blank"
+              rel="noopener noreferrer">
+              Claim now
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

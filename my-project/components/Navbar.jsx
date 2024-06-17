@@ -26,7 +26,7 @@ export default function Navbar() {
             <div className="text-">
               <button
                 onClick={() => setShowModal(false)}
-                className="absolute px-4 py-2 text-white ro unded right-8 top-8">
+                className="absolute px-4 py-2 text-white rounded right-2 top-4">
                 <svg
                   width="24"
                   height="24"
