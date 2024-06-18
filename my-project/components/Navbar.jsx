@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between h-16 p-2 px-4 text-white bg-opacity bg-[#191919]">
         <img
           src="https://res.cloudinary.com/dy7zpv1ij/image/upload/v1718633152/logo_muowun.png"
-          className="w-28 md:hidden"
+          className="w-32 md:hidden"
           alt="Logo"
         />
         <p className="hidden mx-2 text-xl md:block font-montserrat ">

@@ -147,7 +147,7 @@ const CardId = () => {
           </div>
         </div>
         <div className="h-[2px] bg-  my-1"></div>
-        <div className=" bg-[#191919] my- px-6 w-full">
+        <div className=" bg-[#191919] text-justify my- px-6 w-full">
           <p className="py-4">
             {" "}
             <span className="text-lg font-semibold text-[#717171]">
@@ -170,7 +170,7 @@ const CardId = () => {
             </ul>
           </div>
           <div className="flex col"></div>
-          <div className="flex items-center px-4 py-1 my-4 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400 border-cyan-500">
+          <div className="flex items-center px-4 py-1 my-4 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-500 via-cyan-500 to-blue-500 border-cyan-500">
             <a href={cardData.open_giveaway} target="_blank">
               <p className="rounded-sm w-fit">Claim now</p>
             </a>
