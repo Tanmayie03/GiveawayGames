@@ -57,18 +57,21 @@ export default function Navbar() {
                 </svg>
               </button>
               <nav className="w-full my-4" onClick={() => setShowModal(false)}>
-                <ul className="w-full">
-                  <li className="w-full text-center">
+                <ul className="w-full px-8 py-4 text-black rounded bg-stone-100">
+                  <li className="px-6 py-1 mb-4 text-xl font-semibold text-center text-white border-b rounded border-cyan-500 bg-cyan-500">
+                    Menu
+                  </li>
+                  <li className="w-full text-center border-t border-cyan-500">
                     <NavLink
                       to="/"
-                      className="block w-full py-4 rounded hover:bg-stone-950 bg-opacity-60 hover: bg-stone-950">
+                      className="block w-full py-4 rounded hover:bg-stone-950 bg-opacity-60 ">
                       Home
                     </NavLink>
                   </li>
                   <li className="w-full text-center">
                     <NavLink
                       to="/allGames"
-                      className="block w-full py-4 rounded hover:bg-stone-950 bg-opacity-60 hover: bg-stone-950">
+                      className="block w-full py-4 rounded hover:bg-stone-950 bg-opacity-60 ">
                       All Games
                     </NavLink>
                   </li>
