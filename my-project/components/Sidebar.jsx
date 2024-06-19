@@ -16,8 +16,8 @@ const Sidebar = ({ children }) => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "block font-lato py-4 border-l-2 w-full border-cyan-600 rounded hover:bg-[#282828] bg-opacity-60 hover:border-cyan-600 bg-stone-950"
-                    : "block font-lato py-4 border-l-2 w-full border-transparent rounded hover:bg-[#282828] bg-opacity-60 hover:border-cyan-600"
+                    ? "block font-lato py-4 border-l-2 w-full border-cyan-600 rounded hover:bg-stone-950  hover:border-cyan-600 bg-stone-950"
+                    : "block font-lato py-4 border-l-2 w-full border-transparent rounded hover:bg-stone-950  hover:border-cyan-600"
                 }>
                 Home
               </NavLink>
@@ -27,8 +27,8 @@ const Sidebar = ({ children }) => {
                 to="/allGames"
                 className={({ isActive }) =>
                   isActive
-                    ? "block py-4 border-l-2 w-full border-cyan-600 rounded hover:bg-[#282828] bg-opacity-60 hover:border-cyan-600 bg-stone-950"
-                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-[#282828] bg-opacity-60 hover:border-cyan-600"
+                    ? "block py-4 border-l-2 w-full border-cyan-600 rounded hover:bg-stone-950  hover:border-cyan-600 bg-stone-950"
+                    : "block py-4 border-l-2 w-full border-transparent rounded hover:bg-stone-950  hover:border-cyan-600"
                 }>
                 All Games
               </NavLink>

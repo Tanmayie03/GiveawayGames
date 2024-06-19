@@ -16,7 +16,7 @@ export default function Card(props) {
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center py-1 rounded w-fit ">
-                <span className="text-gray-400 line-through ">
+                <span className="text-[#717171] line-through ">
                   {props.worth}
                 </span>
                 <p className="pl-2 text-green-400 rounded-sm w-fit">Free</p>
@@ -34,7 +34,7 @@ export default function Card(props) {
                   <p className="rounded-sm w-fit">Claim now</p>
                 </a>
               </div>
-              <div className="flex items-center ml-2 text-gray-400 ">
+              <div className="flex items-center ml-2 text-[#717171] ">
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

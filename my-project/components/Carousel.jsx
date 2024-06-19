@@ -21,7 +21,7 @@ export default function Carousel({ items }) {
           <SwiperSlide key={item.id}>
             <div className="">
               <div className="relative md:h-[340px] flex md:flex-row flex-col m-4 text-white rounded-lg shadow-md bg-[#191919] b ">
-                <p className="absolute md:px-5 px-4 py-[2px]  text-sm md:text-base  md:font-semibold text-white bg-red-500 rounded-full sm:top-3 left-2 top-2 sm:left-3">
+                <p className="absolute  px-4 py-[2px]  text-sm md:text-base  d text-white border-2 border-cyan-500 rounded-full sm:top-3 left-2 top-2 sm:left-3">
                   Popular
                 </p>
                 <img
@@ -38,7 +38,7 @@ export default function Carousel({ items }) {
                       <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
                       {item.status}
                     </div>
-                    <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-[#5b5b5b] w-fit">
+                    <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-[#333333] w-fit">
                       {item.type}
                     </div>
                   </div>

@@ -73,7 +73,7 @@ const CardId = () => {
 
             <div className="flex my-1 text-sm text-[#717171]">
               Type:
-              <p className="px-4 py-[2px] mx-2 text-white text-sm rounded-full bg-[#282828] w-fit">
+              <p className="px-3 py-[2px] mx-2 text-white text-sm rounded-full border  border-[#717171] w-fit">
                 {" "}
                 {cardData.type}
               </p>
@@ -150,15 +150,13 @@ const CardId = () => {
         <div className=" bg-[#191919] text-justify my- px-6 w-full">
           <p className="py-4">
             {" "}
-            <span className="text-lg font-semibold text-[#717171]">
+            <span className="text-lg  text-[#717171]">
               About this game:
             </span>{" "}
             <br></br> {cardData.description}
           </p>
           <div className="flex flex-col">
-            <span className="text-lg font-semibold text-[#717171]">
-              Instructions:
-            </span>
+            <span className="text-lg  text-[#717171]">Instructions:</span>
             <ul className="list-disc list-inside">
               {instructionsArray.map((instruction, index) => (
                 <li
