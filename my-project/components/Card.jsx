@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 export default function Card(props) {
   return (
     <Link to={`/CardId/${props.id}`}>
-      <div className="text-white border-2 rounded-md shadow-md md:w-80 hover:bg-[#282828] border-stone-900 bg-[#191919] h-fit bg-opacity-70 card">
+      <div className="text-white border-2 rounded-md shadow-md md:w-80 hover:bg-black border-stone-900 bg-[#0d1013] h-fit bg-opacity-70 card">
         <div key={props.id}>
           <img
             src={props.thumbnail}
             alt={props.title}
-            className="w-full mb-2 rounded"
+            className="w-full mb-2 rounded-t"
           />
           <div className="p-4">
             <div className="my-2 text-lg font-semibold line-clamp-1 text-ellipsis">
@@ -16,12 +16,12 @@ export default function Card(props) {
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center py-1 rounded w-fit ">
-                <span className="text-[#717171] line-through ">
+                <span className="text-gray-600 line-through ">
                   {props.worth}
                 </span>
                 <p className="pl-2 text-green-400 rounded-sm w-fit">Free</p>
               </div>
-              <div className="px-4 py-[2px] mx-3 text-sm text-center rounded-full bg-[#3f3f3f] w-fit">
+              <div className="px-4 py-[2px] mx-3 text-sm text-center rounded-full bg-gray-700 w-fit">
                 {props.type}
               </div>
             </div>
@@ -29,7 +29,7 @@ export default function Card(props) {
               {props.description}
             </div>
             <div className="flex items-center my-4 ">
-              <div className="flex items-center px-4 py-1 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-500 via-cyan-500 to-blue-500 border-cyan-500">
+              <div className="flex items-center px-4 py-1 border-2 rounded w-fit hover:bg-cyan-500 border-cyan-500">
                 <a href={props.open_giveaway} target="_blank">
                   <p className="rounded-sm w-fit">Claim now</p>
                 </a>

@@ -83,7 +83,7 @@ const FirstSection = () => {
   };
 
   return (
-    <div className="h-[90.5%] w-full font-montserrat sm:p-2 overflow-y-scroll  bg-[#121212]">
+    <div className="h-[90.5%] w-full font-montserrat sm:p-2 overflow-y-scroll   bg-[#000000]">
       <div className="flex">
         <Carousel items={popularGame} />
       </div>

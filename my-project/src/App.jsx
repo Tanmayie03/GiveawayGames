@@ -25,7 +25,7 @@ function App() {
   ]);
 
   return (
-    <div className="w-full h-screen font-lato no-scrollbar bg-[#121212]">
+    <div className="w-full h-screen font-lato no-scrollbar bg-[#07001D]">
       <RouterProvider router={router} />
     </div>
   );

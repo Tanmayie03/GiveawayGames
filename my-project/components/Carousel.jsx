@@ -20,16 +20,16 @@ export default function Carousel({ items }) {
         {items.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="">
-              <div className="relative md:h-[340px] flex md:flex-row flex-col m-4 text-white rounded-lg shadow-md bg-[#191919] b ">
+              <div className="relative md:h-[280px] flex md:flex-row flex-col m-4 text-white rounded-lg shadow-md bg-[#0d1013] b ">
                 <p className="absolute  px-4 py-[2px]  text-sm md:text-base  d text-white border-2 border-cyan-500 rounded-full sm:top-3 left-2 top-2 sm:left-3">
                   Popular
                 </p>
                 <img
                   src={item.thumbnail}
                   alt={item.title}
-                  className="rounded sm:object-cover h-52 md:h-full md:w-2/3 "
+                  className="rounded-l-lg sm:object-cover h-52 md:h-full md:w-1/2 "
                 />
-                <div className="px-4 py-6 sm:px-8 md:w-1/2">
+                <div className="px-4 py-6 md:py-4 md:px-6 sm:px-8 md:w-1/2">
                   <div className="text-xl font-bold line-clamp-1">
                     {item.title}
                   </div>
@@ -38,23 +38,25 @@ export default function Carousel({ items }) {
                       <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
                       {item.status}
                     </div>
-                    <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-[#333333] w-fit">
+                    <div className="px-4 mx-3 text-[15px] text-center rounded-full bg-gray-700 w-fit">
                       {item.type}
                     </div>
                   </div>
-                  <div className="my-6 line-clamp-3">{item.description}</div>
+                  <div className="my-4 line-clamp-3">{item.description}</div>
                   <div className="flex ">
-                    <div className="flex items-center px-4 py-1 rounded w-fit bg-gradient-to-tr from-green-500 via-cyan-500 to-blue-500">
-                      <span className="line-through text- ">{item.worth}</span>
+                    <div className="flex items-center py-1 text-green-500 rounded w-fit">
+                      <span className="text-gray-600 line-through ">
+                        {item.worth}
+                      </span>
                       <p className="pl-2 font-medium rounded-sm w-fit">Free</p>
                     </div>
-                    <div className="flex items-center px-4 py-1 ml-4 border-2 rounded w-fit border-cyan-400">
+                    <div className="flex items-center px-2 py-1 ml-4 border-2 rounded hover:bg-cyan-500 border-cyan-500 w-fit">
                       <a href={item.open_giveaway} target="_blank">
-                        <p className="pl-2 rounded-sm w-fit ">Claim now</p>
+                        <p className="rounded-sm w-fit">Claim now</p>
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center mt-4 text-gray-300 md:mt-12 ">
+                  <div className="flex items-center mt-4 text-gray-300 ">
                     <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

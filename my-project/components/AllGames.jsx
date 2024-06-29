@@ -19,12 +19,12 @@ const AllGames = () => {
       });
   }, []);
   return (
-    <div className=" h-[90.2%] bg-[#121212] overflow-hidden">
+    <div className=" h-[90.2%] bg-black overflow-hidden">
       <div className="mt-4 ">
         <p className="mx-6 text-2xl md:text-4xl md:mx-4 text-stone-300">
           109 Live Giveaways, Freebies and Offers
         </p>
-        <div className="flex items-center mx-6 my-2 text-stone-500">
+        <div className="flex items-center mx-6 my-2 text-gray-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26px"
@@ -35,7 +35,7 @@ const AllGames = () => {
               d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"
             />
           </svg>
-          <p className="ml-2 text-sm md:text-base text-stone-500 ">
+          <p className="ml-2 text-sm md:text-base ">
             We found a total of $427.92 worth of games and loot, with a current
             count of 109 giveaways.
           </p>

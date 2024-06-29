@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="relative bg-[#1e1e2f]">
-      <div className="flex items-center justify-between h-16 p-2 px-4 text-white bg-opacity bg-[#191919]">
+    <div className="relative bg-[#0d1013]">
+      <div className="flex items-center justify-between h-16 p-2 px-4 text-white bg-opacity ">
         <img
           src="https://res.cloudinary.com/dy7zpv1ij/image/upload/v1718633152/logo_muowun.png"
           className="w-32 md:hidden"

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = ({ children }) => {
   return (
     <div className="flex w-full h-screen font-lato">
-      <div className="hidden w-1/5 pt-4 text-white border-r md:block bg-[#191919] border-stone-700">
+      <div className="hidden w-1/5 pt-4 text-white  md:block bg-[#0d1013] ">
         <img
           src="https://res.cloudinary.com/dy7zpv1ij/image/upload/v1718633152/logo_muowun.png"
           className="w-40 mx-auto"

@@ -47,59 +47,61 @@ const CardId = () => {
   const platformWord = cardData.platforms.split(",").slice(0, 2);
   console.log(platformWord);
   return (
-    <div className="h-[90.5%]  font-lato  md:p-6 overflow-y-scroll  bg-[#121212]">
+    <div className="h-[90.5%]  font-lato  md:p-6 overflow-y-scroll  bg-black">
       <div className="flex flex-col items-center p-4 text-white md:p-0 md:items-start ">
-        <div className="relative flex flex-col w-full rounded  md:flex-row bg-[#191919]">
-          <div className=" md:w-1/2">
+        <div className="relative flex flex-col w-full rounded  md:flex-row bg-[#0d1013]">
+          <div className="">
             <img
               src={cardData.image}
               alt={cardData.title}
-              className="object-cover h-full mb-4 md:mb-0 hover:opacity-90 "
+              className="h-full mb-4 object-covr md:mb-0 "
             />
           </div>
-          <div className="absolute flex items-center px-2 text-sm text-green-500 border-2 border-green-500 rounded-full left-2 top-2 w-fit ">
-            <div className="w-2 h-2 mr-1 bg-green-500 rounded-full animate-pulse"></div>
+          <div className="absolute flex items-center px-2 text-sm bg-green-500 rounded-full left-2 top-2 w-fit ">
+            <div className="w-2 h-2 mr-1 bg-white rounded-full animate-pulse"></div>
             {cardData.status}
           </div>
-          <div className="flex flex-col p-4 md:p-0 md:py-4 md:px-6 md:w-1/2">
+          <div className="flex flex-col p-4 md:p-6 md:w-1/2">
             <h1 className="text-2xl font-semibold md:text-2xl">
               {cardData.title}
             </h1>
             <p className="py-2 text-sm">
               {" "}
-              <span className="mr-1 text-[#717171]"> Published on:</span>{" "}
+              <span className="mr-1 text-gray-500"> Published on:</span>{" "}
               {cardData.published_date.slice(0, 10)}
             </p>
 
-            <div className="flex my-1 text-sm text-[#717171]">
+            <div className="flex my-1 text-sm text-gray-500">
               Type:
-              <p className="px-3 py-[2px] mx-2 text-white text-sm rounded-full border  border-[#717171] w-fit">
+              <p className="px-3 py-[2px] mx-2 text-white text-sm rounded-full border  border-gray-600 w-fit">
                 {" "}
                 {cardData.type}
               </p>
             </div>
-            <p className="py-1 text-sm text-[#717171]">
+            <p className="py-1 text-sm text-gray-500">
               For Platform:{" "}
               {platformWord.map((platform, index) => (
                 <span
                   key={index}
-                  className="px-3 py-[2px] text-sm f text-[#5b5b5b] rounded-full bg-cyan-400 mx-1">
+                  className="px-3 py-[3px] text-sm  text-gray-600 rounded-full bg-cyan-500 mx-1">
                   {platform}
                 </span>
               ))}
             </p>
             <div className="flex my-2 ">
-              <div className="flex items-center px-4 py-1 rounded w-fit bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400">
-                <span className="line-through text- ">{cardData.worth}</span>
-                <p className="pl-2 rounded-sm w-fit">Free</p>
+              <div className="flex items-center py-1 rounded w-fit">
+                <span className="text-gray-500 line-through ">
+                  {cardData.worth}
+                </span>
+                <p className="pl-2 text-green-600 rounded-sm w-fit">Free</p>
               </div>
-              <div className="flex items-center px-4 py-1 mx-4 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-400 via-cyan-400 to-blue-400 border-cyan-500">
+              <div className="flex items-center px-4 py-1 mx-4 border-2 rounded w-fit hover:bg-cyan-500 border-cyan-500">
                 <a href={cardData.open_giveaway} target="_blank">
                   <p className="rounded-sm w-fit">Claim now</p>
                 </a>
               </div>
             </div>
-            <p className="flex pt-2 text-[#717171]">
+            <p className="flex items-center pt-2 text-sm text-gray-500 md:pt-0">
               <span className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,16 +149,14 @@ const CardId = () => {
           </div>
         </div>
         <div className="h-[2px] bg-  my-1"></div>
-        <div className=" bg-[#191919] text-justify my- px-6 w-full">
+        <div className=" bg-[#0d1013] text-justify my- px-6 w-full">
           <p className="py-4">
             {" "}
-            <span className="text-lg  text-[#717171]">
-              About this game:
-            </span>{" "}
+            <span className="text-lg text-gray-500">About this game:</span>{" "}
             <br></br> {cardData.description}
           </p>
           <div className="flex flex-col">
-            <span className="text-lg  text-[#717171]">Instructions:</span>
+            <span className="text-lg text-gray-500">Instructions:</span>
             <ul className="list-disc list-inside">
               {instructionsArray.map((instruction, index) => (
                 <li
@@ -168,7 +168,7 @@ const CardId = () => {
             </ul>
           </div>
           <div className="flex col"></div>
-          <div className="flex items-center px-4 py-1 my-4 border-2 rounded w-fit hover:bg-gradient-to-tr from-green-500 via-cyan-500 to-blue-500 border-cyan-500">
+          <div className="flex items-center px-4 py-1 my-4 border-2 rounded w-fit hover:bg-cyan-500 border-cyan-500">
             <a href={cardData.open_giveaway} target="_blank">
               <p className="rounded-sm w-fit">Claim now</p>
             </a>
