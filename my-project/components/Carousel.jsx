@@ -27,7 +27,7 @@ export default function Carousel({ items }) {
                 <img
                   src={item.thumbnail}
                   alt={item.title}
-                  className="rounded-l-lg sm:object-cover h-52 md:h-full md:w-1/2 "
+                  className="rounded-l-lg  sm:object-cover h-52 md:h-full md:w-1/2"
                 />
                 <div className="px-4 py-6 md:py-4 md:px-6 sm:px-8 md:w-1/2">
                   <div className="text-xl font-bold line-clamp-1">

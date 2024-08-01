@@ -17,7 +17,7 @@ const FirstSection = () => {
 
   useEffect(() => {
     axios
-      .get("https://mocki.io/v1/ff15cb4d-af02-4091-9496-ddd576a21f29")
+      .get("https://gamerpower.p.rapidapi.com/api/giveaways")
       .then((response) => {
         setgameGiveaway(response.data);
         setFilteredItems(response.data);
@@ -30,14 +30,10 @@ const FirstSection = () => {
     const fetchData = async () => {
       const options = {
         method: "GET",
-        url: "https://gamerpower.p.rapidapi.com/api/filter",
-        params: {
-          platform: "epic-games-store.steam.android",
-          type: "game.loot",
-        },
+        url: "https://gamerpower.p.rapidapi.com/api/giveaways",
         headers: {
           "x-rapidapi-key":
-            "43510225a5msh602504b2e2deac1p126d7djsn02c614603526",
+            "05490ea13dmshd2c07510dcf8631p1afcb9jsn2f14b768b53e",
           "x-rapidapi-host": "gamerpower.p.rapidapi.com",
         },
       };
@@ -53,7 +49,7 @@ const FirstSection = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("https://mocki.io/v1/712adbea-e5df-457b-a2eb-54466e364613")
+      .get("https://gamerpower.p.rapidapi.com/api/giveaways")
       .then((response) => {
         setpopularGame(response.data.slice(0, 5));
       })

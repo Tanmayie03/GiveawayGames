@@ -12,7 +12,7 @@ const CardId = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://mocki.io/v1/ff15cb4d-af02-4091-9496-ddd576a21f29`
+          `https://gamerpower.p.rapidapi.com/api/giveaways`
         );
 
         const item = response.data.find((item) => item.id === parseInt(id));

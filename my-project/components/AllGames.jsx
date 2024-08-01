@@ -8,7 +8,7 @@ const AllGames = () => {
 
   useEffect(() => {
     axios
-      .get("https://mocki.io/v1/b4d2e015-85f9-4513-b134-de6e4498026b")
+      .get("https://gamerpower.p.rapidapi.com/api/giveaways")
       .then((response) => {
         console.log(response);
         setgameGiveaway(response.data);
